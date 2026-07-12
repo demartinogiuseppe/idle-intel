@@ -1,5 +1,7 @@
 # idle-intel
 
+![idle-intel in action: rotating project-health insights in Claude Code wait state](demo.gif)
+
 **The status line is the most-watched line on a developer's screen while an AI agent thinks. Today it says "Thinking...". It could say something worth knowing.**
 
 idle-intel replaces Claude Code's empty wait state with rotating micro-briefings about the project you're already working on:
