@@ -1,0 +1,10 @@
+{
+  "name": "idle-intel",
+  "version": "1.0.0",
+  "description": "Turn Claude Code's wait-state status line into rotating micro-briefings about your project: security vulns, outdated deps, unpushed commits, stale branches, TODO/FIXME debt.",
+  "author": {
+    "name": "Giuseppe - The Deeper Layer"
+  },
+  "license": "MIT",
+  "keywords": ["statusline", "productivity", "security", "dependencies", "wait-state"]
+}

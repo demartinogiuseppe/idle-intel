@@ -1,0 +1,14 @@
+{
+  "name": "the-deeper-layer",
+  "owner": {
+    "name": "Giuseppe - The Deeper Layer"
+  },
+  "plugins": [
+    {
+      "name": "idle-intel",
+      "source": "./plugins/idle-intel",
+      "description": "Turn Claude Code's wait-state status line into rotating micro-briefings about your project: security vulns, outdated deps, unpushed commits, stale branches, TODO/FIXME debt. Useful instead of empty.",
+      "category": "productivity"
+    }
+  ]
+}
