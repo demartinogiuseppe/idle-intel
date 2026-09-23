@@ -39,6 +39,8 @@ Two-speed design:
 
 The status line never waits for a scan. Cache lives in `<project>/.claude/idle-intel/cache.txt`.
 
+Add `.claude/idle-intel/` to your project's `.gitignore` so the cache is never committed.
+
 ## See everything at once
 
 The status line shows one insight at a time. To re-scan and see all of them in the chat, run:
@@ -48,6 +50,8 @@ The status line shows one insight at a time. To re-scan and see all of them in t
 ```
 
 This also works where the status line is not shown, such as the VS Code extension.
+
+Unlike the status line, `/intel` goes through the model, so each run uses a small number of tokens.
 
 ## Install
 
@@ -61,6 +65,8 @@ This also works where the status line is not shown, such as the VS Code extensio
 Then ask Claude Code to "set up idle-intel" — the skill walks it through wiring your `settings.json`.
 
 ### Manual (Linux / macOS)
+
+Manual install gives you the status line only; `/intel` requires the plugin install.
 
 ```bash
 mkdir -p ~/.claude/idle-intel
@@ -114,7 +120,7 @@ Collectors are plain functions in `collect.py`: `(root: Path) -> list[str]`, reg
 
 ## Uninstall
 
-Remove the `statusLine` block from `~/.claude/settings.json`. Delete `<project>/.claude/idle-intel/` caches freely.
+Remove the `statusLine` block from `~/.claude/settings.json`, then either `/plugin uninstall idle-intel@the-deeper-layer` or delete `~/.claude/idle-intel/` if you installed manually. Delete `<project>/.claude/idle-intel/` caches freely.
 
 ## License
 
