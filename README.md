@@ -39,6 +39,16 @@ Two-speed design:
 
 The status line never waits for a scan. Cache lives in `<project>/.claude/idle-intel/cache.txt`.
 
+## See everything at once
+
+The status line shows one insight at a time. To re-scan and see all of them in the chat, run:
+
+```
+/intel
+```
+
+This also works where the status line is not shown, such as the VS Code extension.
+
 ## Install
 
 ### As a Claude Code plugin

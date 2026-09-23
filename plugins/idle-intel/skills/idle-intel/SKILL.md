@@ -59,7 +59,7 @@ Two-speed design is mandatory: the statusline command runs constantly and must n
 
 On Windows, three things differ. Apply all of them when the user is on Windows:
 
-1. Python is `python`, not `python3` (scripts auto-detect via `command -v python3 || command -v python`).
+1. Python is `python`, not `python3` (scripts auto-detect by trying `python3` then `python`, skipping the Microsoft Store `python3` stub that exists but does not run).
 2. Claude Code executes the status line command OUTSIDE Git Bash, so `C:\Windows\System32\bash.exe` (WSL) may shadow Git's bash, and quoting "Program Files" breaks. Solution: generate a `.cmd` wrapper next to the scripts:
    ```bat
    @echo off

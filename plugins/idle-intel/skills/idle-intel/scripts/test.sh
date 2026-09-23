@@ -9,7 +9,8 @@ SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "== idle-intel test drive on: $DIR"
 echo ""
 echo "-- Step 1/3: running collector (this is the slow path, done in background normally)"
-PY=$(command -v python3 || command -v python)
+PY=""
+for p in python3 python; do "$p" -c "" 2>/dev/null && PY=$p && break; done
 "$PY" "$SELF_DIR/collect.py" "$DIR" || { echo "FAIL: collector error"; exit 1; }
 
 echo ""

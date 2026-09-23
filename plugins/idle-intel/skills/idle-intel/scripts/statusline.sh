@@ -17,8 +17,10 @@ SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Background refresh if cache missing or older than 30 minutes.
 # python3 on Linux/macOS, python on Windows -- detected once here, off the fast path.
+# Each candidate must actually run: on Windows `python3` is often the Microsoft Store stub.
 if [ ! -f "$CACHE" ] || [ -n "$(find "$CACHE" -mmin +30 2>/dev/null)" ]; then
-  PY=$(command -v python3 || command -v python)
+  PY=""
+  for p in python3 python; do "$p" -c "" 2>/dev/null && PY=$p && break; done
   [ -n "$PY" ] && (nohup "$PY" "$SELF_DIR/collect.py" "$DIR" >/dev/null 2>&1 &)
 fi
 
